@@ -27,5 +27,5 @@ public class HelloController {
     }
 
     @FXML
-    protected void onSignInClick() { welcomeText.setText("Welcome to JavaFX Application!");}
+    protected void onSignInClick() { welcomeText.setText("Welcome to JavaFX");}
 }
