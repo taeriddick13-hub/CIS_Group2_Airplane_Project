@@ -1,4 +1,4 @@
 package common;
 
-public class VO {
+public class vo {
 }
