@@ -1,5 +1,7 @@
 package org.example.group2_project;
 
+import common.Action;
+import common.VO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -10,20 +12,29 @@ public class HelloController {
     private Label welcomeText;
 
     @FXML
-    private TextField username;
+    private TextField usernameField;
 
     @FXML
-    private PasswordField password;
+    private PasswordField passwordField;
+
+    private Facade facade = new Facade();
 
 
     @FXML
     protected void onLoginClick() {
-        if (username.getText().isEmpty() || password.getText().isEmpty()) {
+        VO vo = new VO();
+        vo.setUsername(usernameField.toString());
+        vo.setPassword(passwordField.toString());
+        vo.setAction(Action.LOGIN);
+        facade.process(vo);
+
+        if (usernameField.getText().isEmpty() || passwordField.getText().isEmpty()) {
             welcomeText.setText("Enter your username and password");
             return;
         }
 
         welcomeText.setText("Welcome to JavaFX Application!");
+
     }
 
     @FXML
