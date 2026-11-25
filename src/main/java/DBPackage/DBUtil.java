@@ -7,7 +7,7 @@ public class DBUtil {
     public static final String DB_USER = "dbooker8";
     public static final String DB_PASSWORD = "Deandre12$";
 
-    public boolean login(VO vo) {
+    public void login(VO vo) {
         return;
     }
 }
