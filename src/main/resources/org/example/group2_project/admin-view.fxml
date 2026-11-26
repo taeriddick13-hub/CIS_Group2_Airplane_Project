@@ -4,13 +4,82 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.group2_project.AdminController">
-   <children>
-      <TableView fx:id="flightsTable" layoutX="182.0" layoutY="58.0" prefHeight="200.0" prefWidth="200.0" />
-      <TableView prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-   </children>
+    <children>
+        <BorderPane layoutX="194.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+        <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" spacing="10.0">
+            <children>
+
+                <TableView fx:id="flightTable" prefHeight="400.0" prefWidth="586.0" HBox.hgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colFlightId" prefWidth="63.0" text="FlightId" />
+                        <TableColumn fx:id="colFlightNumber" prefWidth="97.0" text="Flight Number" />
+                        <TableColumn fx:id="colOrigin" prefWidth="36.0" text="Original City" />
+                        <TableColumn fx:id="colDestination" prefWidth="75.0" text="Destination City" />
+                        <TableColumn fx:id="colDepartTime" prefWidth="75.0" text="Depart Time" />
+                        <TableColumn fx:id="colArriveTime" prefWidth="75.0" text="Arrive Time" />
+                        <TableColumn fx:id="colMaxCapacity" prefWidth="75.0" text="Max Capacity" />
+                        <TableColumn fx:id="colCurrentPassengers" prefWidth="93.0" text="Current Passengers" />
+                        <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="17.0" text="Price" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+
+                <GridPane prefHeight="250.0" prefWidth="300.0" HBox.hgrow="NEVER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="155.0" minWidth="101.0" prefWidth="101.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="155.0" minWidth="101.0" prefWidth="101.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="171.0" minWidth="10.0" prefWidth="49.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                    </rowConstraints>
+
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="90.0" prefWidth="590.0" spacing="10.0" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                            <children>
+                                <Button fx:id="btnAdd" mnemonicParsing="false" text="Add" />
+                                <Button fx:id="btnUpdate" mnemonicParsing="false" text="Update" />
+                                <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="34.0" prefWidth="54.0" text="Button" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+
+                        <!-- Labels in Column 0 -->
+                        <Label text="Flight ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label text="Flight Number" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label text="Original City" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label text="Destination City" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label text="Depart Time" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label text="Arrive Time" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <Label text="Max Capacity" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <Label text="Current Passengers" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <Label text="Price" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+
+                        <!-- TextFields in Column 1 -->
+                        <TextField fx:id="tfFlightId" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <TextField fx:id="tfFlightNumber" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="tfOrigin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="tfDestination" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="tfDepartTime" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="tfArriveTime" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="tfMaxCapacity" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="tfCurrentPassengers" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="tfPrice" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                    </children>
+                </GridPane>
+
+            </children>
+        </HBox>
+    </children>
 </AnchorPane>
